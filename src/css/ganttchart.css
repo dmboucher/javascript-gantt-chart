@@ -1,0 +1,220 @@
+/****************************************************************************/
+/* Styles for Gantt Chart Objects                                           */
+/****************************************************************************/
+
+.gantt_chart {
+	display         : flex;
+	font-size       : .9em;
+	height          : calc(100% - 26px);
+}
+
+.gantt_chart * {
+	box-sizing      : border-box;
+	color           : rgb(60, 60, 60);
+	display         : flex;
+}
+
+.gantt_chart .rows_header {
+	background-color: white;
+	flex-direction  : column;
+	height          : 60px;
+	overflow        : hidden;
+}
+
+.gantt_chart .rows_header.rows_grid_header {
+	font-weight     : 600;
+}
+
+.gantt_chart .rows_header .gantt_chart_row_header {
+	height          : 30px;
+}
+
+.gantt_chart .rows_header .gantt_chart_row_header .gantt_cell {
+	border-bottom   : 1px solid rgb(190, 190, 190);
+	height          : 28px;
+	padding-top     : 5px;
+	white-space     : nowrap;
+}
+
+.gantt_chart .rows_header .gantt_chart_row_header .gantt_cell.center {
+	justify-content : center;
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell {
+	align-items     : center;
+	height          : 25px;
+	position        : relative;
+	white-space     : nowrap;
+}
+
+.gantt_chart .rows_header.rows_grid_header .gantt_cell {
+	border-bottom   : 1px solid rgb(190, 190, 190);
+	border-right    : 1px solid rgb(240, 240, 240);
+	display         : flex !important; /* Needed to override the name gantt_cell which needs "display: inline" in order to render the ellipsis properly */
+	height          : 56px;
+	padding-top     : 18px;
+	justify-content : center;
+}
+
+.gantt_chart .gantt_row {
+	align-items     : center;
+	border-bottom   : 1px solid rgb(240, 240, 240);
+	flex-shrink     : 0;
+	height          : 25px;
+}
+
+.gantt_chart .gantt_row.over .gantt_cell {
+	background-color: rgb(240, 240, 240) !important; /* Needed to override the in-line background color of the weekend bands */
+}
+
+.gantt_chart .rows_grid {
+	overflow-y      : hidden;
+}
+
+.gantt_chart .rows_chart {
+	overflow-y      : auto;
+}
+
+.gantt_chart .rows_grid,
+.gantt_chart .rows_chart {
+	background-color: white;
+	border-bottom   : 1px solid rgb(190, 190, 190);
+	flex-direction  : column;
+	overflow-x      : auto;
+	height          : 100%;
+}
+
+.gantt_chart .rows_grid .gantt_grid_row .gantt_cell {
+	border-right    : 1px solid rgb(240, 240, 240);
+	height          : 100%;
+	padding-top     : 3px;
+	user-select     : none;
+}
+
+.gantt_chart .gantt_row.expanded {
+	display         : flex;
+}
+
+.gantt_chart .gantt_row.collapsed {
+	display         : none;
+}
+
+.gantt_chart .gantt_grid_row .gantt_cell.gantt_id {
+	justify-content : center;
+}
+
+.gantt_chart .gantt_grid_row .gantt_cell.gantt_name .row_name {
+	display         : inline;
+	overflow        : hidden;
+	text-overflow   : ellipsis;
+	white-space     : nowrap;
+}
+
+.gantt_chart .gantt_grid_row .gantt_cell.gantt_name.is_parent {
+	cursor          : pointer;
+	font-weight     : 600;
+}
+
+.gantt_chart .gantt_grid_row .gantt_cell.gantt_name.is_child {
+	padding-left    : 20px;
+}
+
+.gantt_chart .gantt_grid_row .gantt_cell.gantt_date {
+	justify-content : center;
+}
+
+.gantt_chart .gantt_grid_row .gantt_cell svg {
+	height          : 16px;
+	width           : 16px;
+	fill            : rgb(80, 80, 80)
+}
+
+.gantt_chart .gantt_left {
+	border-left     : 1px solid rgb(190, 190, 190);
+	overflow        : hidden;
+}
+
+.gantt_chart .gantt_right {
+	border-right    : 1px solid rgb(190, 190, 190);
+	overflow        : hidden;
+}
+
+.gantt_chart .gantt_side {
+	flex-direction  : column;
+}
+
+.gantt_chart .splitter {
+	background-color: rgb(205, 205, 205);
+	border-left     : 1px solid rgb(100, 100, 100);
+	border-right    : 1px solid rgb(100, 100, 100);
+	cursor          : ew-resize;
+}
+
+.gantt_chart .splitter:hover {
+	background-color: rgb(95, 95, 95);
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell .gantt_bar {
+	background-color: darkblue;
+	border-radius   : 3px;
+	height          : 16px;
+	position        : absolute;
+	z-index         : 3; /* index 1 = parent bars, index 2 = connectors, index 3 = child bars, index 4 = today indicator */
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell .gantt_bar::after {
+	content         : attr(data-completed);
+	left            : 100%;
+	margin-left     : 4px;
+	position        : absolute;
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell .gantt_bar.is_parent:after {
+	font-weight     : 600;
+	margin-left     : 10px;
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell .is_today {
+	background-color: red;
+	position        : absolute;
+	top             : 0;
+	width           : 1px;
+	z-index         : 4; /* index 1 = parent bars, index 2 = connectors, index 3 = child bars, index 4 = today indicator */
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell .connector_container {
+	pointer-events  : none;
+	position        : absolute;
+	top             : 0;
+	width           : 100%;
+	z-index         : 2; /* index 1 = parent bars, index 2 = connectors, index 3 = child bars, index 4 = today indicator */
+}
+
+.gantt_chart .gantt_chart_row .gantt_cell .gantt_bar.is_parent {
+	background-color: rgb(60, 60, 60);
+	border-bottom   : 7px solid white;
+	border-right    : 5px solid rgb(60, 60, 60);
+	border-left     : 5px solid rgb(60, 60, 60);
+	z-index         : 1; /* index 1 = parent bars, index 2 = connectors, index 3 = child bars, index 4 = today indicator */
+}
+
+.gantt_chart .gantt_button {
+	background-color: rgb(235, 235, 235);
+	border          : 1px solid rgb(135, 135, 135);
+	border-radius   : 5px;
+	cursor          : pointer;
+	margin          : 1px 0 0 0;
+	padding         : 0;
+	height          : 17px;
+	width           : 70px;
+}
+
+.gantt_chart .gantt_textbox {
+	border          : 1px solid rgb(135, 135, 135);
+	border-radius   : 5px;
+	cursor          : pointer;
+	margin          : 1px 0 0 0;
+	padding         : 0;
+	height          : 15px;
+	width           : 100px;
+}
