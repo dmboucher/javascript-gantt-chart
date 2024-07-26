@@ -1,0 +1,60 @@
+html {
+	font-family     : verdana, sans-serif;
+	font-size       : 14px;
+}
+
+body {
+	margin          : 0;
+	overflow        : hidden;
+}
+
+.content {
+	border          : 1px solid black;
+	border-radius   : 9px;
+	position        : absolute;
+	margin          : 20px;
+	overflow        : hidden; /* We don't want the content window to scroll for the gantt chart since the control itself has its own scrolling mechanisms */
+	top             : 0;
+	bottom          : 0;
+	left            : 0;
+	right           : 0;
+}
+
+.content .gantt_headerbar {
+	background-color: darkblue;
+	color           : white;
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+	position        : relative;
+	height          : 30px;
+}
+
+.content .gantt_headerbar .controls {
+	display         : flex;
+	position        : absolute;
+	left            : 0;
+}
+
+.content .gantt_headerbar .controls .control_icon {
+	cursor          : pointer;
+	margin          : 0 5px;
+}
+
+.content .gantt_headerbar .controls .control_icon.collapse {
+	margin-right    : 20px;
+}
+
+.content .gantt_headerbar .controls .control_icon svg {
+	height          : 20px;
+	width           : 20px;
+	fill:           white;
+}
+
+.content .gantt_headerbar .controls .control_icon.zoom.disabled {
+	opacity         : .5;
+}
+
+.content .gantt_headerbar .title {
+	margin          : auto;
+}

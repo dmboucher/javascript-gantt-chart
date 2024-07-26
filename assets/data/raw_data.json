@@ -1,0 +1,472 @@
+[
+    {
+        "connect": [],
+        "id": 1,
+        "end": 1718164799000,
+        "name": "Sales & Budgeting",
+        "completed": 0,
+        "start": 1716436800000
+    },
+    {
+        "completed": 0,
+        "start": 1716436800000,
+        "name": "Project Review Meeting",
+        "end": 1716868799000,
+        "id": 2,
+        "connect": [],
+        "parent": 1
+    },
+    {
+        "completed": 0,
+        "start": 1717128000000,
+        "end": 1717646399000,
+        "id": 3,
+        "name": "Project Scope Issues Identified",
+        "connect": [
+            {
+                "to": 2,
+                "type": "SF"
+            }
+        ],
+        "parent": 1
+    },
+    {
+        "connect": [
+            {
+                "to": 3,
+                "type": "SF"
+            }
+        ],
+        "parent": 1,
+        "id": 4,
+        "end": 1717819199000,
+        "name": "Programming Information Gathered",
+        "start": 1717473600000,
+        "completed": 0
+    },
+    {
+        "id": 5,
+        "end": 1718164799000,
+        "name": "Typicals and Specs Submitted and Approved",
+        "parent": 1,
+        "connect": [
+            {
+                "type": "SS",
+                "to": 4
+            }
+        ],
+        "completed": 0,
+        "start": 1717646400000
+    },
+    {
+        "completed": 0,
+        "start": 1717473600000,
+        "connect": [
+            {
+                "type": "SS",
+                "to": 5
+            }
+        ],
+        "parent": 1,
+        "name": "Budget Pricing Submitted and Approved",
+        "end": 1717819199000,
+        "id": 6
+    },
+    {
+        "completed": 0,
+        "start": 1716436800000,
+        "connect": [],
+        "name": "Design & Planning",
+        "end": 1719374399000,
+        "id": 7
+    },
+    {
+        "start": 1717646400000,
+        "completed": 0,
+        "end": 1718164799000,
+        "name": "Field Measurements Taken",
+        "id": 8,
+        "connect": [
+            {
+                "type": "FF",
+                "to": 6
+            }
+        ],
+        "parent": 7
+    },
+    {
+        "completed": 0,
+        "start": 1717473600000,
+        "parent": 7,
+        "connect": [
+            {
+                "to": 8,
+                "type": "FF"
+            }
+        ],
+        "id": 9,
+        "end": 1717819199000,
+        "name": "Building Electrical Verified"
+    },
+    {
+        "completed": 0,
+        "start": 1717128000000,
+        "name": "Site Survey Performed",
+        "end": 1717646399000,
+        "id": 10,
+        "parent": 7,
+        "connect": [
+            {
+                "to": 9,
+                "type": "FS"
+            }
+        ]
+    },
+    {
+        "end": 1716955199000,
+        "id": 11,
+        "name": "Site Information Updated",
+        "connect": [
+            {
+                "to": 10,
+                "type": "FS"
+            }
+        ],
+        "parent": 7,
+        "start": 1716436800000,
+        "completed": 0
+    },
+    {
+        "end": 1718683199000,
+        "name": "Furniture Floorplans Submitted and Approved",
+        "id": 12,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 9
+            }
+        ],
+        "parent": 7,
+        "completed": 0,
+        "start": 1718164800000
+    },
+    {
+        "completed": 0,
+        "start": 1718856000000,
+        "id": 13,
+        "end": 1719374399000,
+        "name": "Finishes Submitted and Approved",
+        "parent": 7,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 12
+            }
+        ]
+    },
+    {
+        "name": "Proposal",
+        "end": 1720583999000,
+        "id": 14,
+        "connect": [],
+        "start": 1719115200000,
+        "completed": 0
+    },
+    {
+        "connect": [
+            {
+                "to": 13,
+                "type": "SF"
+            }
+        ],
+        "parent": 14,
+        "id": 15,
+        "end": 1719460799000,
+        "name": "Specification Check Conducted",
+        "start": 1719374400000,
+        "completed": 0
+    },
+    {
+        "connect": [
+            {
+                "type": "SF",
+                "to": 13
+            }
+        ],
+        "parent": 14,
+        "name": "Product Pricing Verified",
+        "end": 1719633599000,
+        "id": 16,
+        "start": 1719460800000,
+        "completed": 0
+    },
+    {
+        "start": 1719806400000,
+        "completed": 0,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 16
+            }
+        ],
+        "parent": 14,
+        "end": 1719892799000,
+        "name": "Product Proposal Generated",
+        "id": 17
+    },
+    {
+        "name": "Delivery & Installation Proposal Generated",
+        "end": 1719892799000,
+        "id": 18,
+        "parent": 14,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 17
+            }
+        ],
+        "completed": 0,
+        "start": 1719806400000
+    },
+    {
+        "parent": 14,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 18
+            }
+        ],
+        "name": "Proposal and T&Cs Presented",
+        "end": 1719979199000,
+        "id": 19,
+        "start": 1719892800000,
+        "completed": 0
+    },
+    {
+        "parent": 14,
+        "connect": [
+            {
+                "to": 19,
+                "type": "SF"
+            }
+        ],
+        "end": 1720583999000,
+        "name": "Proposal Approved",
+        "id": 20,
+        "start": 1720497600000,
+        "completed": 0
+    },
+    {
+        "start": 1719115200000,
+        "completed": 0,
+        "end": 1719201599000,
+        "id": 21,
+        "name": "PO and Deposit Received",
+        "parent": 14,
+        "connect": []
+    },
+    {
+        "parent": 14,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 21
+            }
+        ],
+        "id": 22,
+        "end": 1719287999000,
+        "name": "Manufacturer Orders Placed",
+        "start": 1719201600000,
+        "completed": 0
+    },
+    {
+        "start": 1719201600000,
+        "completed": 0,
+        "connect": [],
+        "id": 23,
+        "end": 1720756799000,
+        "name": "Labor Preparation"
+    },
+    {
+        "connect": [
+            {
+                "to": 22,
+                "type": "SF"
+            }
+        ],
+        "parent": 23,
+        "end": 1719287999000,
+        "id": 24,
+        "name": "Labor Scheduled",
+        "completed": 0,
+        "start": 1719201600000
+    },
+    {
+        "name": "Site Readiness Walk Thru Conducted",
+        "end": 1720756799000,
+        "id": 25,
+        "connect": [
+            {
+                "type": "SS",
+                "to": 30
+            }
+        ],
+        "parent": 23,
+        "completed": 0,
+        "start": 1720670400000
+    },
+    {
+        "end": 1721361599000,
+        "id": 26,
+        "name": "Warehouse",
+        "connect": [],
+        "start": 1721275200000,
+        "completed": 0
+    },
+    {
+        "id": 27,
+        "end": 1721361599000,
+        "name": "New Product Received",
+        "connect": [
+            {
+                "to": 30,
+                "type": "SS"
+            }
+        ],
+        "parent": 26,
+        "completed": 0,
+        "start": 1721275200000
+    },
+    {
+        "parent": 26,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 27
+            }
+        ],
+        "end": 1721361599000,
+        "id": 28,
+        "name": "Freight Claims Filed",
+        "completed": 0,
+        "start": 1721275200000
+    },
+    {
+        "completed": 0,
+        "start": 1721361600000,
+        "end": 1722311999000,
+        "name": "Deliver & Install",
+        "id": 29,
+        "connect": []
+    },
+    {
+        "start": 1721534400000,
+        "completed": 0,
+        "connect": [],
+        "parent": 29,
+        "end": 1721620799000,
+        "id": 30,
+        "name": "New Product Delivered and Staged"
+    },
+    {
+        "completed": 0,
+        "start": 1721361600000,
+        "parent": 29,
+        "connect": [
+            {
+                "to": 30,
+                "type": "SF"
+            }
+        ],
+        "end": 1721966399000,
+        "id": 31,
+        "name": "Systems Furniture Installed"
+    },
+    {
+        "start": 1721966400000,
+        "completed": 0,
+        "end": 1722052799000,
+        "name": "Private Offices Installed",
+        "id": 32,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 31
+            }
+        ],
+        "parent": 29
+    },
+    {
+        "connect": [
+            {
+                "to": 32,
+                "type": "SF"
+            }
+        ],
+        "parent": 29,
+        "name": "Other Areas Installed",
+        "end": 1722311999000,
+        "id": 33,
+        "completed": 0,
+        "start": 1722225600000
+    },
+    {
+        "connect": [],
+        "id": 34,
+        "end": 1724126399000,
+        "name": "Project Completion",
+        "completed": 0,
+        "start": 1722312000000
+    },
+    {
+        "parent": 34,
+        "connect": [
+            {
+                "type": "SF",
+                "to": 33
+            }
+        ],
+        "id": 35,
+        "end": 1722398399000,
+        "name": "Walk-thru Conducted",
+        "completed": 0,
+        "start": 1722312000000
+    },
+    {
+        "connect": [],
+        "parent": 34,
+        "id": 36,
+        "end": 1722830399000,
+        "name": "Client Move-in",
+        "completed": 0,
+        "start": 1722744000000
+    },
+    {
+        "start": 1722398400000,
+        "completed": 0,
+        "parent": 34,
+        "connect": [
+            {
+                "to": 35,
+                "type": "SF"
+            }
+        ],
+        "end": 1724126399000,
+        "id": 37,
+        "name": "Punch List Tracked and Completed"
+    },
+    {
+        "connect": [
+            {
+                "to": 37,
+                "type": "SF"
+            }
+        ],
+        "parent": 34,
+        "name": "Customer Sign-Off",
+        "end": 1724126399000,
+        "id": 38,
+        "completed": 0,
+        "start": 1724040000000
+    }
+]
