@@ -12,3 +12,6 @@ Some of the built in features:
 
 # Screenshot
 ![screenshot](misc/screenshots/screenshot.png)
+
+# Live Example
+[Live Example] (https://dmboucher.github.io/javascript-gantt-chart/index.html)
